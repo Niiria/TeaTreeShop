@@ -1,10 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="normal">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TeaTreeShop</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/src/assets/favicon.ico"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+    </style>
   </head>
+  <body>
+    <nav class="nav">
+      <img class="nav_logo" src="/src/assets/logo.png" />
+      <ul class="nav_pages">
+        <li>
+          <p id="teas">Tea's</p>
+        </li>
+        <li>
+          <p id="leafs">Leaf's</p>
+        </li>
+        <li>
+          <p id="landing">About</p>
+        </li>
+      </ul>
+      <div id="cart" class="nav_cart">
+        <p class="nav_cart-count"></p>
+        <img src="/src/assets/nav_cart.png" />
+      </div>
+    </nav>
+    <div class="background">
+      <!-- landing -->
+      <section class="landing">
+        <div class="landing_main">
+          <h1>
+            Welcome to our shop!
+          </h1>
+          <p>
+            We are company that have love in tea, we even have our own garden!
+            We sell high quality leaf’s and tea’s. If you would like to buy
+            something choose it from menu above, you can find us on media below
+          </p>
+        </div>
 
-  <body></body>
+        <footer class="landing_footer">
+          <div class="landing_footer-certified">
+            <p>
+              Certified by greengarden-co
+            </p>
+            <img src="/src/assets/img/landing/GreenGardenCert.png" />
+          </div>
+
+          <div class="landing_footer-media">
+            <img src="/src/assets/img/landing/Twitter.png" />
+            <img src="/src/assets/img/landing/FB.png" />
+            <img src="/src/assets/img/landing/Instagram.png" />
+            <img src="/src/assets/img/landing//Youtube.png" />
+            <img src="/src/assets/img/landing/Phone.png" />
+            <p>+48 124 523 235</p>
+          </div>
+        </footer>
+      </section>
+      <!-- Teas -->
+      <section class="teas">
+        <div class="teas_nav">
+          <h1>MENU</h1>
+          <ul class="teas_nav-categories">
+            <li id="teas_Black">
+              All
+            </li>
+            <li id="teas_Black">
+              Black
+            </li>
+            <li id="teas_Green">
+              Green
+            </li>
+            <li id="teas_Aromatic">
+              Aromatic
+            </li>
+            <li id="teas_Sweet">
+              Sweet
+            </li>
+          </ul>
+          <div class="teas_search-wrap">
+            <label for="search">Search:</label>
+            <input type="text" class="teas_search" name="search" />
+          </div>
+        </div>
+
+        <ul class="teas_main">
+          <li>
+            <img
+              class="teas_image"
+              src="/src/assets/img/teas/Lipton.jpeg"
+              alt="image"
+            />
+            <div>
+              <p class="teas_name">awdwad</p>
+              <p class="teas_price">awdawdw</p>
+            </div>
+            <img
+              class="teas_buy"
+              src="/src/assets/img/teas/teas_basket.png"
+              alt="buy"
+            />
+          </li>
+          <li>
+            <img
+              class="teas_image"
+              src="/src/assets/img/teas/Lipton.jpeg"
+              alt="image"
+            />
+            <div>
+              <p class="teas_name"></p>
+              <p class="teas_price"></p>
+            </div>
+            <img
+              class="teas_buy"
+              src="/src/assets/img/teas/teas_basket.png"
+              alt="buy"
+            />
+          </li>
+          <li>
+            <img
+              class="teas_image"
+              src="/src/assets/img/teas/Lipton.jpeg"
+              alt="image"
+            />
+            <div>
+              <p class="teas_name"></p>
+              <p class="teas_price"></p>
+            </div>
+            <img
+              class="teas_buy"
+              src="/src/assets/img/teas/teas_basket.png"
+              alt="buy"
+            />
+          </li>
+          <li>
+            <img
+              class="teas_image"
+              src="/src/assets/img/teas/Lipton.jpeg"
+              alt="image"
+            />
+            <div>
+              <p class="teas_name"></p>
+              <p class="teas_price"></p>
+            </div>
+            <img
+              class="teas_buy"
+              src="/src/assets/img/teas/teas_basket.png"
+              alt="buy"
+            />
+          </li>
+
+          <li class="teas_main-pages">
+            <p class="teas_main-pageCount">Page 1/2</p>
+            <div class="teas_main-pageBtn">
+              <img
+                id="teas_main-pageBtn-right"
+                src="/src/assets/img/teas/pageL.png"
+              />
+              <img
+                id="teas_main-pageBtn-left"
+                src="/src/assets/img/teas/pageR.png"
+              />
+            </div>
+            <img src="/src/assets/img/teas/teas_img.png" />
+          </li>
+        </ul>
+      </section>
+      <!-- Cart -->
+      <section class="cart">
+        <div class="main_card-left">
+          <h1>
+            Choose your payment method
+          </h1>
+          <ul>
+            <li>
+              <img src="/src/assets/img/card/Paypal.png" />
+              <input id="payment_paypal" type="radio" name="radio_payment" />
+            </li>
+            <li>
+              <img src="/src/assets/img/card/Mastercard.png" />
+              <input
+                id="payment_mastercard"
+                type="radio"
+                name="radio_payment"
+              />
+            </li>
+            <li>
+              <img src="/src/assets/img/card/Visa.png" />
+              <input id="payment_visa" type="radio" name="radio_payment" />
+            </li>
+          </ul>
+        </div>
+        <div class="main_card-right">
+          <div class="main_card-rightL">
+            <h1>
+              Your shopping card
+            </h1>
+            <ul id="card_itemList-ul">
+              <!-- <li>
+      <p class="card_itemList-name">Black tea</p>
+      <p class="card_itemList-price">25$</p>
+      <p>*</p>
+      <input class="card_itemList-amount" type="text" value="1" />
+      <p>=</p>
+      <p class="card_itemList-total">50$</p>
+      <img src="src/img/card_remove.png" />
+    </li> -->
+            </ul>
+          </div>
+          <div class="main_card-rightR">
+            <div>
+              <img src="/src/assets/img/card/delivery.png" />
+              <h1>Delivery</h1>
+              <p>5$ in Poland</p>
+              <p>10$ if export</p>
+              <p id="main_card-right-freeDelivery">
+                free after 50$ total
+              </p>
+            </div>
+            <div>
+              <h1 id="main_card-right-total">Total:</h1>
+              <img class="card_pay" src="/src/assets/img/card/pay.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>

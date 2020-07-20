@@ -1,9 +1,442 @@
-$primary-color: #3e6f9e;
-$background-color: #dfc2c9;
+html[data-theme='normal'] {
+  height: 100%;
+  display: table;
+  --background: #ddd1b1;
+  --nav_color: #3fcc7780;
+}
+
+html[data-theme='honisie'] {
+  height: 100%;
+  display: table;
+  --background: ddd1b1;
+  --nav_color: #669900;
+}
+
+html[data-theme='dark'] {
+  height: 100%;
+  display: table;
+  --background: black;
+  --nav_color: red;
+}
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   line-height: 1.6em;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  background-color: var(--background);
+  user-select: none;
+}
+
+.background {
+  position: relative;
+  height: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(/src/assets/background.jpg);
+    background-size: cover;
+    opacity: 0.6;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+p:hover {
+  cursor: context-menu;
+}
+h1:hover {
+  cursor: context-menu;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayGrid {
+  display: grid;
+}
+
+.navActive {
+  -webkit-text-stroke: 2px black !important;
+  color: var(--background) !important;
+}
+
+//******************************** nav ************************
+.nav {
+  display: flex;
+  background-color: var(--nav_color);
+  justify-content: space-between;
+  .nav_logo {
+    margin: auto 0;
+    height: max-content;
+  }
+  .nav_pages {
+    list-style: none;
+    display: flex;
+    margin: auto 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    li {
+      margin: 0 20px;
+      p {
+        font-family: 'Dancing Script';
+        text-decoration: none;
+        color: black;
+        font-size: 5em;
+      }
+      p:hover {
+        cursor: pointer;
+        -webkit-text-stroke: 2px black;
+        transform: scale(1.1);
+        color: var(--background);
+      }
+      p:active {
+        -webkit-text-stroke: 2px black;
+        color: var(--background);
+        transform: scale(1.3);
+      }
+    }
+  }
+  .nav_cart {
+    display: flex;
+    margin: auto 30px auto 0;
+
+    .nav_cart-count {
+      text-align: center;
+      position: relative;
+      width: 1.5em;
+      left: 38px;
+      top: 43px;
+      font-size: 1.5em;
+      color: black;
+    }
+  }
+  .nav_cart:hover {
+    cursor: pointer;
+    transition: 0.2s ease;
+    transform: scale(1.2);
+  }
+  .nav_cart:active {
+    transition: 0.2s ease;
+    transform: translateY(10px);
+    transform: scale(1.5);
+  }
+}
+
+//****************************** Landing *************************************
+.landing {
+  position: relative;
+  height: 100%;
+  .landing_main {
+    height: 90%;
+    text-align: center;
+    padding: 0 20%;
+    font-family: 'Dancing Script';
+    p {
+      font-weight: 900;
+      font-size: 1.6em;
+    }
+    h1 {
+      padding: 1.5em;
+      font-size: 4em;
+    }
+  }
+}
+
+.landing_footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  user-select: none;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    * {
+      margin: 10px;
+    }
+    p {
+      font-family: 'Dancing Script';
+      color: black;
+      font-size: 1.5em;
+    }
+  }
+}
+
+//******************************************** Teas ******************************************
+
+.teas {
+  position: relative;
+  grid-template-columns: 1fr 4fr;
+  padding: 50px;
+  text-align: center;
+  gap: 20px;
+
+  .teas_nav {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Dancing Script';
+    font-weight: 900;
+    font-size: 2.5em;
+    background-color: var(--nav_color);
+    border-radius: 5px;
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    * {
+      list-style: none;
+
+      li:hover {
+        text-shadow: 3px 3px var(--background);
+        cursor: pointer;
+      }
+    }
+  }
+}
+.teas_search-wrap {
+  margin-top: 60px;
+  input {
+    margin: 5px;
+    border: 2px solid #ccc;
+    outline: none;
+  }
+  input:focus {
+    transition: 0.5s;
+    border: 5px solid green;
+    margin: 2px;
+  }
+}
+
+.teas_main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: var(--nav_color);
+  border-radius: 5px;
+  padding: 20px;
+  justify-content: space-evenly;
+
+  li {
+    border: solid 2px black;
+    margin: 5px;
+    list-style: none;
+    width: 20%;
+    min-width: 200px;
+    .teas_image {
+      width: 100%;
+    }
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      font-size: 1.5em;
+    }
+    .teas_buy {
+      transition: background-color 1000ms step-end;
+    }
+
+    .teas_buy:hover {
+      cursor: pointer;
+      transition: 0.5s ease;
+      transform: scale(1.2);
+    }
+    .teas_buy:active {
+      transform: scale(4);
+      transition: 0.3s ease-out;
+    }
+  }
+  .teas_main-pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 2em;
+    border: none;
+  }
+}
+//****************************** card *********************
+.main_card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  column-gap: 5%;
+  padding: 8vh;
+
+  .main_card-left {
+    font-weight: 900;
+    font-size: 1.6em;
+    text-align: center;
+    border-radius: 5px;
+    h1 {
+      font-family: 'Dancing Script';
+    }
+    ul {
+      margin-top: 20px;
+      list-style: none;
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px;
+        input {
+          margin-left: 10px;
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+  .main_card-right {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    text-align: center;
+    background-color: #6fce8880;
+    border-radius: 10px;
+    padding: 10px;
+    .main_card-rightL {
+      //********************** left
+      h1 {
+        font-family: 'Dancing Script';
+        font-size: 2.4em;
+      }
+      ul {
+        background-color: #e1d8c0;
+        list-style: none;
+        border-radius: 10px;
+        li {
+          padding: 8px;
+          display: grid;
+          grid-template-columns: 3fr 1fr 1fr 1fr 1fr 2fr 1fr;
+          justify-content: space-between;
+
+          * {
+            font-size: 1.6em;
+            margin: 0 10px;
+          }
+          input {
+            text-align: center;
+            width: 60px;
+            height: 40px;
+            background-color: transparent;
+            border-radius: 5px;
+            border: none;
+            text-decoration: underline;
+          }
+          input:hover {
+            background-color: white;
+          }
+          input:focus {
+            background-color: white;
+          }
+          img {
+            width: 1.6em;
+          }
+          img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .main_card-rightR {
+      //********************** right
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      div {
+        margin: auto;
+        h1 {
+          font-family: 'Dancing Script';
+          font-size: 2.5em;
+        }
+        p {
+          font-size: 1.4em;
+        }
+        .card_pay {
+          cursor: pointer;
+        }
+        .card_pay:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+//********************************************************** MEDIA ***********
+@media screen and (max-width: 600px) {
+  body {
+    height: max-content;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .nav_logo {
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+    }
+    .nav_pages {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      li {
+        p {
+          font-size: 3em;
+        }
+      }
+    }
+    .nav_cart {
+      justify-content: center;
+    }
+  }
+
+  .teas {
+    display: flex !important;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 5%;
+    .teas_nav {
+      flex-direction: column !important;
+      font-size: 1.5em !important;
+
+      h1 {
+        margin-top: 0px !important;
+      }
+      .teas_search-wrap {
+        margin-top: 0px;
+      }
+      .teas_nav-categories {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.3em;
+        justify-content: space-evenly;
+        li {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+  .teas_main {
+    flex-direction: column;
+    align-items: center;
+  }
 }

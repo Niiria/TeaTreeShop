@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Green tea",
+    "price": 11,
+    "category": "Black"
+  },
+  {
+    "name": "Grahabell tea",
+    "price": 12,
+    "category": "Black"
+  },
+  {
+    "name": "Grahawave tea",
+    "price": 13,
+    "category": "Black"
+  },
+  {
+    "name": "Gothham tea",
+    "price": 15,
+    "category": "Black"
+  },
+  {
+    "name": "Kokalydia tea",
+    "price": 16,
+    "category": "Sweet"
+  },
+  {
+    "name": "Tinkerrah tea",
+    "price": 17,
+    "category": "Green"
+  },
+  {
+    "name": "Grareeka tea",
+    "price": 13,
+    "category": "Sweet"
+  },
+  {
+    "name": "Scrlydia tea",
+    "price": 15,
+    "category": "Sweet"
+  },
+  {
+    "name": "Biglydia tea",
+    "price": 19,
+    "category": "Green"
+  },
+  {
+    "name": "Hydraham tea",
+    "price": 22,
+    "category": "Sweet"
+  },
+  {
+    "name": "Bloodyh tea",
+    "price": 13,
+    "category": "Sweet"
+  },
+  {
+    "name": "TuByla tea",
+    "price": 11,
+    "category": "Black"
+  },
+  {
+    "name": "Codazzle tea",
+    "price": 12,
+    "category": "Black"
+  },
+  {
+    "name": "Titanre tea",
+    "price": 15,
+    "category": "Green"
+  },
+  {
+    "name": "Ngugobb tea",
+    "price": 14,
+    "category": "Black"
+  },
+  {
+    "name": "Gardne tea",
+    "price": 18,
+    "category": "Aromatic"
+  },
+  {
+    "name": "Silvermar tea",
+    "price": 23,
+    "category": "Sweet"
+  },
+  {
+    "name": "Bigstone tea",
+    "price": 17,
+    "category": "Aromatic"
+  },
+  {
+    "name": "Murubima tea",
+    "price": 12,
+    "category": "Aromatic"
+  },
+  {
+    "name": "Cozle tea",
+    "price": 12,
+    "category": "Black"
+  },
+  {
+    "name": "Codazle tea",
+    "price": 12,
+    "category": "Black"
+  }
+]
