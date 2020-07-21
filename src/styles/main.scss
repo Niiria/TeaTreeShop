@@ -9,14 +9,14 @@ html[data-theme='honisie'] {
   height: 100%;
   display: table;
   --background: ddd1b1;
-  --nav_color: #669900;
+  --nav_color: #66990080;
 }
 
 html[data-theme='dark'] {
   height: 100%;
   display: table;
   --background: black;
-  --nav_color: red;
+  --nav_color: #8282e980;
 }
 
 * {
@@ -68,6 +68,12 @@ h1:hover {
 
 .displayGrid {
   display: grid;
+}
+.visibilityHidden {
+  visibility: hidden;
+}
+.visibilityVisible {
+  visibility: visible;
 }
 
 .navActive {
@@ -270,9 +276,8 @@ h1:hover {
   }
 }
 //****************************** card *********************
-.main_card {
+.cart {
   position: relative;
-  display: grid;
   grid-template-columns: 1fr 5fr;
   column-gap: 5%;
   padding: 8vh;

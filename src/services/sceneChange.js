@@ -1,20 +1,35 @@
 import navActive from '../utils/navActive';
+import data from './fetchData';
+import teas from './teasService';
 
 const LANDING = document.querySelector('.landing');
 const TEAS = document.querySelector('.teas');
 const CART = document.querySelector('.cart');
 
-export default class SceneChange {
+class SceneChange {
   constructor() {
     this.landing();
   }
 
   change(name) {
     navActive(name);
-    if (name === 'landing') this.landing();
-    if (name === 'teas') this.teas();
-    if (name === 'cart') this.cart();
-    if (name === 'leafs') this.teas();
+
+    switch (name) {
+      case 'landing':
+        this.landing();
+        break;
+      case 'teas':
+        this.teas();
+        break;
+      case 'cart':
+        this.cart();
+        break;
+      case 'leafs':
+        this.teas();
+        break;
+      default:
+        break;
+    }
   }
 
   landing() {
@@ -27,8 +42,12 @@ export default class SceneChange {
     LANDING.classList.add('displayBlock');
   }
 
-  teas() {
+  async teas() {
     this.name = 'teas';
+    await data.getJSON();
+    teas.setData(data.JSON);
+    teas.setTeas('Black');
+
     CART.classList.remove('displayGrid');
     CART.classList.add('displayNone');
     LANDING.classList.remove('displayBlock');
@@ -47,3 +66,6 @@ export default class SceneChange {
     CART.classList.add('displayGrid');
   }
 }
+
+const scene = new SceneChange();
+export default scene;
