@@ -1,10 +1,11 @@
 import navActive from '../utils/navActive';
 import data from './fetchData';
-import teas from './teasService';
+import viewService from './viewService';
 
 const LANDING = document.querySelector('.landing');
-const TEAS = document.querySelector('.teas');
+const VIEW = document.querySelector('.view');
 const CART = document.querySelector('.cart');
+const VIEW_GIRL = document.querySelector('.view_girl');
 
 class SceneChange {
   constructor() {
@@ -18,16 +19,11 @@ class SceneChange {
       case 'landing':
         this.landing();
         break;
-      case 'teas':
-        this.teas();
-        break;
       case 'cart':
         this.cart();
         break;
-      case 'leafs':
-        this.teas();
-        break;
       default:
+        this.view(name);
         break;
     }
   }
@@ -36,32 +32,36 @@ class SceneChange {
     this.name = 'landing';
     CART.classList.remove('displayGrid');
     CART.classList.add('displayNone');
-    TEAS.classList.remove('displayGrid');
-    TEAS.classList.add('displayNone');
+    VIEW.classList.remove('displayGrid');
+    VIEW.classList.add('displayNone');
     LANDING.classList.remove('displayNone');
     LANDING.classList.add('displayBlock');
   }
 
-  async teas() {
-    this.name = 'teas';
-    await data.getJSON();
-    teas.setData(data.JSON);
-    teas.setTeas('Black');
+  async view(name) {
+    this.name = name;
+    VIEW_GIRL.src = `./src/assets/img/view/${name}_girl.png`;
+
+    await data.getJSON(`${name}.json`);
+    viewService.setData(data.JSON);
+    viewService.setTeas('Black');
 
     CART.classList.remove('displayGrid');
     CART.classList.add('displayNone');
     LANDING.classList.remove('displayBlock');
     LANDING.classList.add('displayNone');
-    TEAS.classList.remove('displayNone');
-    TEAS.classList.add('displayGrid');
+    VIEW.classList.remove('displayNone');
+    VIEW.classList.add('displayGrid');
   }
 
-  cart() {
+  async cart() {
     this.name = 'cart';
+    await data.getLocal();
+
     LANDING.classList.remove('displayBlock');
     LANDING.classList.add('displayNone');
-    TEAS.classList.remove('displayGrid');
-    TEAS.classList.add('displayNone');
+    VIEW.classList.remove('displayGrid');
+    VIEW.classList.add('displayNone');
     CART.classList.remove('displayNone');
     CART.classList.add('displayGrid');
   }
