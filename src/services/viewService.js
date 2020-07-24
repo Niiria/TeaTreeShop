@@ -37,11 +37,12 @@ class ViewService {
     });
   }
 
-  async setTeas(condition, searchValue) {
+  async setView(condition, searchValue) {
     this.pageArray = [];
     this.index = 0;
     this.condition = condition;
     if (condition === 'All' && searchValue === undefined) {
+      this.page = 0;
       this.totalPages = Math.ceil(this.data.length / 7);
       VIEW_PAGE_COUNT.innerHTML = `Page ${this.page + 1} / ${this.totalPages}`;
       this.display(this.data);

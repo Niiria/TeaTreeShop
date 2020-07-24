@@ -2,7 +2,7 @@ import './styles/main.scss';
 import itemCounter from './utils/itemCounter';
 import scene from './services/sceneChange';
 import swapTheme from './utils/swapTheme';
-import data from './services/fetchData';
+import fetchData from './services/fetchData';
 import viewService from './services/viewService';
 
 const NAV_PAGES = document.querySelector('.nav_pages');
@@ -13,12 +13,14 @@ const VIEW_PAGE_BTN = document.querySelector('.view_main-pageBtn');
 const VIEW_NAV_CATEGORIES = document.querySelector('.view_nav-categories');
 const VIEW_SEARCH = document.querySelector('.view_search');
 
-scene.change('landing');
+scene.change('cart');
 
 if (localStorage.getItem('itemCount') === null) {
   localStorage.setItem('itemCount', 0);
 }
+
 itemCounter(0);
+fetchData.init();
 
 Array.from(NAV_PAGES.children).forEach((category) => {
   category.addEventListener('click', (element) => {
@@ -50,7 +52,7 @@ VIEW_BUY.forEach((element) => {
       count: 1,
     };
 
-    data.setLocal(object);
+    fetchData.pushObject(object);
   });
 });
 
@@ -59,13 +61,13 @@ Array.from(VIEW_PAGE_BTN.children).forEach((button) => {
     if (element.target.id === 'view_main-pageBtn-right') {
       if (viewService.page < viewService.totalPages - 1) {
         viewService.page += 1;
-        viewService.setTeas(viewService.condition);
+        viewService.setView(viewService.condition);
       }
     }
     if (element.target.id === 'view_main-pageBtn-left') {
       if (viewService.page !== 0) {
         viewService.page -= 1;
-        viewService.setTeas(viewService.condition);
+        viewService.setView(viewService.condition);
       }
     }
   });
@@ -75,7 +77,7 @@ Array.from(VIEW_NAV_CATEGORIES.children).forEach((category) => {
   category.addEventListener('click', (element) => {
     viewService.condition = element.target.id;
     viewService.page = 0;
-    viewService.setTeas(viewService.condition);
+    viewService.setView(viewService.condition);
 
     VIEW_SEARCH.value = '';
   });
@@ -83,5 +85,5 @@ Array.from(VIEW_NAV_CATEGORIES.children).forEach((category) => {
 
 VIEW_SEARCH.addEventListener('input', () => {
   viewService.page = 0;
-  viewService.setTeas(viewService.condition, VIEW_SEARCH.value);
+  viewService.setView(viewService.condition, VIEW_SEARCH.value);
 });

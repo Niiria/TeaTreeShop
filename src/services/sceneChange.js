@@ -1,6 +1,7 @@
 import navActive from '../utils/navActive';
-import data from './fetchData';
+import fetchData from './fetchData';
 import viewService from './viewService';
+import cartService from './cartService';
 
 const LANDING = document.querySelector('.landing');
 const VIEW = document.querySelector('.view');
@@ -42,9 +43,9 @@ class SceneChange {
     this.name = name;
     VIEW_GIRL.src = `./src/assets/img/view/${name}_girl.png`;
 
-    await data.getJSON(`${name}.json`);
-    viewService.setData(data.JSON);
-    viewService.setTeas('Black');
+    await fetchData.getJSON(`${name}.json`);
+    viewService.setData(fetchData.JSON);
+    viewService.setView('All');
 
     CART.classList.remove('displayGrid');
     CART.classList.add('displayNone');
@@ -56,7 +57,7 @@ class SceneChange {
 
   async cart() {
     this.name = 'cart';
-    await data.getLocal();
+    cartService.generateCart(await fetchData.getLocal());
 
     LANDING.classList.remove('displayBlock');
     LANDING.classList.add('displayNone');
