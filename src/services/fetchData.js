@@ -35,15 +35,20 @@ class FetchData {
     }
   }
 
+  clearLocal() {
+    this.database = [];
+    localStorage.setItem('Database', JSON.stringify(this.database));
+  }
+
   removeObject(index) {
     if (JSON.parse(localStorage.getItem('Database')).length > 0) {
       this.database = JSON.parse(localStorage.getItem('Database'));
-    } else return false;
+    }
 
     itemCounter(-this.database[index].count);
     this.database.splice(index, 1);
+
     localStorage.setItem('Database', JSON.stringify(this.database));
-    return true;
   }
 
   pushObject(object) {
@@ -53,7 +58,7 @@ class FetchData {
     let control = false;
     this.database.forEach((element, index) => {
       if (element.name === object.name) {
-        this.database[index].count += 1;
+        this.database[index].count += object.count;
         control = true;
       }
     });
@@ -65,13 +70,12 @@ class FetchData {
   adjustObjectCount(index, value) {
     if (JSON.parse(localStorage.getItem('Database')).length > 0) {
       this.database = JSON.parse(localStorage.getItem('Database'));
-    } else return false;
+    }
 
     itemCounter(value - this.database[index].count);
-    this.database[index].count = value;
+    this.database[index].count = parseInt(value, 10);
 
     localStorage.setItem('Database', JSON.stringify(this.database));
-    return true;
   }
 }
 

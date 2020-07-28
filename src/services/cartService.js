@@ -13,7 +13,7 @@ class CartService {
 
   generateCart(data) {
     CART_ITEMS.innerHTML = '';
-    if (!data) {
+    if (data.length === 0 || !data) {
       const alert = document.createElement('h1');
       alert.innerHTML = 'Brak elementow do wyswietlenia';
       CART_ITEMS.append(alert);
@@ -25,16 +25,12 @@ class CartService {
     });
     Array.from(CART_ITEMS.children).forEach((cartItem) => {
       cartItem.childNodes[3].addEventListener('keyup', (event) => {
-        console.log(event.target.value !== '');
-
         if (
           (event.target.value.length < 4 &&
             event.which >= 48 &&
             event.which <= 57) ||
           event.which === 8
         ) {
-          console.log(event.target.value.length);
-
           this.currentValue = event.target.value;
           data[
             Array.from(CART_ITEMS.children).indexOf(cartItem)
@@ -74,7 +70,6 @@ class CartService {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
   setTotal(data) {
     this.totalValue = 0;
     data.forEach((element) => {

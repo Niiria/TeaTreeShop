@@ -7,12 +7,9 @@ const LANDING = document.querySelector('.landing');
 const VIEW = document.querySelector('.view');
 const CART = document.querySelector('.cart');
 const VIEW_GIRL = document.querySelector('.view_girl');
+const VIEW_MAIN_CONTAINER = document.querySelector('.view_main-container');
 
 class SceneChange {
-  constructor() {
-    this.landing();
-  }
-
   change(name) {
     navActive(name);
 
@@ -31,7 +28,7 @@ class SceneChange {
 
   landing() {
     this.name = 'landing';
-    CART.classList.remove('displayGrid');
+    CART.classList.remove('displayFlex');
     CART.classList.add('displayNone');
     VIEW.classList.remove('displayGrid');
     VIEW.classList.add('displayNone');
@@ -42,12 +39,22 @@ class SceneChange {
   async view(name) {
     this.name = name;
     VIEW_GIRL.src = `./src/assets/img/view/${name}_girl.png`;
-
     await fetchData.getJSON(`${name}.json`);
+
     viewService.setData(fetchData.JSON);
     viewService.setView('All');
 
-    CART.classList.remove('displayGrid');
+    function display() {
+      VIEW_MAIN_CONTAINER.classList.remove('visibilityHiddenNoDelay');
+      VIEW_MAIN_CONTAINER.classList.add('visibilityVisible');
+    }
+    VIEW_MAIN_CONTAINER.classList.add('visibilityHiddenNoDelay');
+    VIEW_MAIN_CONTAINER.classList.remove('visibilityVisible');
+    window.setTimeout(display, 500);
+
+    viewService.page = 0;
+
+    CART.classList.remove('displayFlex');
     CART.classList.add('displayNone');
     LANDING.classList.remove('displayBlock');
     LANDING.classList.add('displayNone');
@@ -64,7 +71,7 @@ class SceneChange {
     VIEW.classList.remove('displayGrid');
     VIEW.classList.add('displayNone');
     CART.classList.remove('displayNone');
-    CART.classList.add('displayGrid');
+    CART.classList.add('displayFlex');
   }
 }
 

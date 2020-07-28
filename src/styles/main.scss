@@ -8,6 +8,7 @@ html[data-theme='normal'] {
 
 html[data-theme='honisie'] {
   height: 100%;
+  width: 100%;
   display: table;
   --background: #ffcc6640;
   --nav_color: #66990080;
@@ -15,6 +16,7 @@ html[data-theme='honisie'] {
 
 html[data-theme='dark'] {
   height: 100%;
+  width: 100%;
   display: table;
   --background: black;
   --nav_color: #68191980;
@@ -70,11 +72,22 @@ h1:hover {
 .displayGrid {
   display: grid;
 }
+
+.displayFlex {
+  display: flex;
+}
+
 .visibilityHidden {
   opacity: 0;
   visibility: hidden;
   transition: 0.5s ease-in;
 }
+
+.visibilityHiddenNoDelay {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .visibilityVisible {
   opacity: 1;
   visibility: visible;
@@ -86,7 +99,7 @@ h1:hover {
   color: var(--background) !important;
 }
 
-//******************************** nav ************************
+//********************************************************************** nav ************************
 .nav {
   position: relative;
   z-index: 2;
@@ -126,7 +139,7 @@ h1:hover {
   }
   .nav_cart {
     display: flex;
-    margin: auto 30px auto 0;
+    margin: auto 40px auto 0;
 
     .nav_cart-count {
       text-align: center;
@@ -150,7 +163,7 @@ h1:hover {
   }
 }
 
-//****************************** Landing *************************************
+//*********************************************************** Landing *************************************
 .landing {
   position: relative;
   height: 100%;
@@ -183,6 +196,9 @@ h1:hover {
   div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
     * {
       margin: 0 10px;
     }
@@ -192,7 +208,7 @@ h1:hover {
   }
 }
 
-//******************************************** view ******************************************
+//********************************************************* view ******************************************
 
 .view {
   position: relative;
@@ -203,6 +219,7 @@ h1:hover {
   z-index: 1;
 
   .view_nav {
+    align-items: center;
     display: flex;
     flex-direction: column;
     font-family: 'Dancing Script';
@@ -226,7 +243,10 @@ h1:hover {
   }
 }
 .view_search-wrap {
+  display: flex;
+  flex-direction: column;
   margin-top: 60px;
+  width: 60%;
   input {
     padding: 0 5px;
     border: 2px solid black;
@@ -279,14 +299,45 @@ h1:hover {
     list-style: none;
     width: 20%;
     min-width: 200px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
     .view_image {
       width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
+      transition: transform 1s;
+      transform: scale(1);
     }
+    .view_image:hover {
+      transform: scale(1.5) translateY(-15%);
+    }
+
     div {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
       font-size: 1.5em;
+      margin-bottom: 5px;
+      button {
+        width: 20%;
+        font-size: 1em;
+        border-radius: 25%;
+        border: none;
+        outline: none;
+      }
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      button:active {
+        outline: none;
+        transform: scale(1.2);
+      }
     }
     .view_buy {
       transition: background-color 1000ms step-end;
@@ -315,15 +366,20 @@ h1:hover {
   z-index: -1;
 }
 
-//**************************************** card ********************************************
+//******************************************************* card ********************************************
 .cart {
   position: relative;
-  grid-template-columns: 1fr 5fr;
-  column-gap: 5%;
-  padding: 8vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5%;
+  z-index: 1;
+  height: 100%;
 }
 
 .cart_payment {
+  width: 20%;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   font-weight: 900;
@@ -331,9 +387,11 @@ h1:hover {
   text-align: center;
   border-radius: 5px;
   font-family: 'Dancing Script';
+  align-items: center;
   ul {
     margin-top: 20px;
     list-style: none;
+    flex-wrap: wrap;
     li {
       display: flex;
       flex-direction: row;
@@ -348,16 +406,19 @@ h1:hover {
 }
 
 .cart_main {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  width: 70%;
+  min-width: 700px;
+  display: flex;
   flex-wrap: wrap;
   text-align: center;
+  justify-content: space-between;
   background-color: var(--nav_color);
   border-radius: 10px;
   padding: 10px;
 }
 
 .cart_main-left {
+  width: 70%;
   h1 {
     font-family: 'Dancing Script';
     font-size: 2.4em;
@@ -374,10 +435,11 @@ h1:hover {
     li {
       padding: 8px;
       display: grid;
-      grid-template-columns: 3fr 1fr 1fr 1fr 1fr 2fr 1fr;
+      grid-template-columns: 3fr 1fr 0.5fr 1fr 0.5fr 1fr 1fr;
+      align-items: center;
+      border-bottom: solid 2px black;
       * {
         font-size: 1.6em;
-        margin: 0 10px;
       }
 
       input {
@@ -409,6 +471,8 @@ h1:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 30%;
+  min-width: 200px;
   div {
     margin: auto;
     h1 {
@@ -427,8 +491,17 @@ h1:hover {
   }
 }
 
-//********************************************************** MEDIA ***********
-@media screen and (max-width: 600px) {
+.cart_girl {
+  width: 40vw;
+  max-width: 1300px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+//*********************************************************** MEDIA **************************
+@media screen and (max-width: 1020px) {
   body {
     height: max-content;
   }
@@ -471,7 +544,10 @@ h1:hover {
         margin-top: 0px !important;
       }
       .view_search-wrap {
-        margin-top: 0px;
+        margin-top: 0;
+        input {
+          margin-left: 20px;
+        }
       }
       .view_nav-categories {
         display: flex;
@@ -485,7 +561,30 @@ h1:hover {
     }
   }
   .view_main {
-    flex-direction: column;
     align-items: center;
+  }
+
+  .cart_payment {
+    width: 100%;
+    h1 {
+      text-align: center;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  .cart_main {
+    width: 100%;
+    min-width: 0;
+    .cart_main-left {
+      width: 100%;
+    }
+    .cart_main-right {
+      margin-top: 30px;
+      width: 100%;
+      flex-direction: row;
+    }
   }
 }

@@ -1,126 +1,93 @@
 [
   {
-    "name": "Green tea",
+    "name": "Green leaf",
     "price": 11,
     "category": "Black",
     "image": "./src/assets/img/view/Lipton.png"
   },
+
   {
-    "name": "Grahabell tea",
-    "price": 12,
-    "category": "Black",
-    "image": "./src/assets/img/view/Lipton.png"
-  },
-  {
-    "name": "Grahawave tea",
-    "price": 13,
-    "category": "Black",
-    "image": "./src/assets/img/view/cat.png"
-  },
-  {
-    "name": "Gothham tea",
+    "name": "Gothham leaf",
     "price": 15,
     "category": "Black",
     "image": "./src/assets/img/view/Lipton.png"
   },
   {
-    "name": "Kokalydia tea",
+    "name": "Kokalydia leaf",
     "price": 16,
     "category": "Sweet",
     "image": "./src/assets/img/view/cat.png"
   },
   {
-    "name": "Tinkerrah tea",
+    "name": "Tinkerrah leaf",
     "price": 17,
     "category": "Green",
     "image": "./src/assets/img/view/cat.png"
   },
   {
-    "name": "Grareeka tea",
+    "name": "Grareeka leaf",
     "price": 13,
     "category": "Sweet",
     "image": "./src/assets/img/view/cat.png"
   },
   {
-    "name": "Scrlydia tea",
+    "name": "Scrlydia leaf",
     "price": 15,
     "category": "Sweet",
     "image": "./src/assets/img/view/cat.png"
   },
   {
-    "name": "Biglydia tea",
+    "name": "Biglydia leaf",
     "price": 19,
     "category": "Green",
     "image": "./src/assets/img/view/Lipton.png"
   },
+
   {
-    "name": "Hydraham tea",
-    "price": 22,
-    "category": "Sweet",
-    "image": "./src/assets/img/view/cat.png"
-  },
-  {
-    "name": "Bloodyh tea",
-    "price": 13,
-    "category": "Sweet",
-    "image": "./src/assets/img/view/Lipton.png"
-  },
-  {
-    "name": "TuByla tea",
+    "name": "TuByla leaf",
     "price": 11,
     "category": "Black",
     "image": "./src/assets/img/view/cat.png"
   },
   {
-    "name": "Codazzle tea",
+    "name": "Codazzle leaf",
     "price": 12,
     "category": "Black",
     "image": "./src/assets/img/view/cat.png"
   },
   {
-    "name": "Titanre tea",
+    "name": "Titanre leaf",
     "price": 15,
     "category": "Green",
     "image": "./src/assets/img/view/Lipton.png"
   },
   {
-    "name": "Ngugobb tea",
+    "name": "Ngugobb leaf",
     "price": 14,
     "category": "Black",
     "image": "./src/assets/img/view/cat.png"
   },
   {
-    "name": "Gardne tea",
+    "name": "Gardne leaf",
     "price": 18,
     "category": "Aromatic",
     "image": "./src/assets/img/view/Lipton.png"
   },
   {
-    "name": "Silvermar tea",
+    "name": "Silvermar leaf",
     "price": 23,
     "category": "Sweet",
     "image": "./src/assets/img/view/Lipton.png"
   },
+
   {
-    "name": "Bigstone tea",
-    "price": 17,
-    "category": "Aromatic",
-    "image": "./src/assets/img/view/Lipton.png"
-  },
-  {
-    "name": "Murubima tea",
-    "price": 12,
-    "category": "Aromatic",
-    "image": "./src/assets/img/view/cat.png"
-  },
-  {
-    "name": "Cozle tea",
+    "name": "Cozle leaf",
     "price": 12,
     "category": "Black",
     "image": "./src/assets/img/view/Lipton.png"
   },
   {
-    "name": "Codazle tea",
+    "name": "Codazle leaf",
     "price": 12,
     "category": "Black",
     "image": "./src/assets/img/view/cat.png"

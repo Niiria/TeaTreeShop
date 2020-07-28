@@ -1,5 +1,6 @@
 const VIEW_NAME = document.querySelectorAll('.view_name');
 const VIEW_PRICE = document.querySelectorAll('.view_price');
+const VIEW_IMAGE = document.querySelectorAll('.view_image');
 const VIEW_MAIN = document.querySelector('.view_main');
 const VIEW_PAGE_COUNT = document.querySelector('.view_main-pageCount');
 
@@ -28,6 +29,8 @@ class ViewService {
         li.classList.add('visibilityVisible');
         VIEW_NAME[index].innerHTML = array[arrayIndex].name;
         VIEW_PRICE[index].innerHTML = `${array[arrayIndex].price} $`;
+        VIEW_IMAGE[index].src = array[arrayIndex].image;
+
         itemsView -= 1;
       } else {
         li.classList.remove('visibilityVisible');
@@ -42,7 +45,6 @@ class ViewService {
     this.index = 0;
     this.condition = condition;
     if (condition === 'All' && searchValue === undefined) {
-      this.page = 0;
       this.totalPages = Math.ceil(this.data.length / 7);
       VIEW_PAGE_COUNT.innerHTML = `Page ${this.page + 1} / ${this.totalPages}`;
       this.display(this.data);
@@ -64,12 +66,17 @@ class ViewService {
         }
       });
       this.totalPages = Math.ceil(this.pageArray.length / 7);
-      VIEW_PAGE_COUNT.innerHTML = `Page ${this.page + 1} / ${this.totalPages}`;
+      if (this.totalPages === 0) {
+        VIEW_PAGE_COUNT.innerHTML = 'No items';
+      } else {
+        VIEW_PAGE_COUNT.innerHTML = `Page ${this.page + 1} / ${
+          this.totalPages
+        }`;
+      }
       this.display(this.pageArray);
     }
   }
 }
-
-const viewService = new ViewService(1);
+const viewService = new ViewService();
 
 export default viewService;
