@@ -16,5 +16,6 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     'comma-dangle': 'off',
     'operator-linebreak': 'off',
+    'no-param-reassign': 0,
   },
 };

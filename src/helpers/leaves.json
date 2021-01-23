@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Green leaf",
+    "price": 11,
+    "category": "Black",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+
+  {
+    "name": "Gothham leaf",
+    "price": 15,
+    "category": "Black",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Kokalydia leaf",
+    "price": 16,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Tinkerrah leaf",
+    "price": 17,
+    "category": "Green",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Grareeka leaf",
+    "price": 13,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Scrlydia leaf",
+    "price": 15,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Biglydia leaf",
+    "price": 19,
+    "category": "Green",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+
+  {
+    "name": "TuByla leaf",
+    "price": 11,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Codazzle leaf",
+    "price": 12,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Titanre leaf",
+    "price": 15,
+    "category": "Green",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Ngugobb leaf",
+    "price": 14,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Gardne leaf",
+    "price": 18,
+    "category": "Aromatic",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Silvermar leaf",
+    "price": 23,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+
+  {
+    "name": "Cozle leaf",
+    "price": 12,
+    "category": "Black",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Codazle leaf",
+    "price": 12,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  }
+]

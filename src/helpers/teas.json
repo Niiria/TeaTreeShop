@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Green tea",
+    "price": 11,
+    "category": "Black",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Grahabell tea",
+    "price": 12,
+    "category": "Black",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Grahawave tea",
+    "price": 13,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Gothham tea",
+    "price": 15,
+    "category": "Black",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Kokalydia tea",
+    "price": 16,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Tinkerrah tea",
+    "price": 17,
+    "category": "Green",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Grareeka tea",
+    "price": 13,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Scrlydia tea",
+    "price": 15,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Biglydia tea",
+    "price": 19,
+    "category": "Green",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Hydraham tea",
+    "price": 22,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Bloodyh tea",
+    "price": 13,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "TuByla tea",
+    "price": 11,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Codazzle tea",
+    "price": 12,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Titanre tea",
+    "price": 15,
+    "category": "Green",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Ngugobb tea",
+    "price": 14,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Gardne tea",
+    "price": 18,
+    "category": "Aromatic",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Silvermar tea",
+    "price": 23,
+    "category": "Sweet",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Bigstone tea",
+    "price": 17,
+    "category": "Aromatic",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Murubima tea",
+    "price": 12,
+    "category": "Aromatic",
+    "image": "./src/assets/img/view/cat.png"
+  },
+  {
+    "name": "Cozle tea",
+    "price": 12,
+    "category": "Black",
+    "image": "./src/assets/img/view/Lipton.png"
+  },
+  {
+    "name": "Codazle tea",
+    "price": 12,
+    "category": "Black",
+    "image": "./src/assets/img/view/cat.png"
+  }
+]
